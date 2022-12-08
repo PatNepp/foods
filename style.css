@@ -15,8 +15,8 @@ html {
 }
 
 .section-heading {
-    font-size: 12rem;
-    font-weight: 900;
+    font-size: 10rem;
+    font-weight: 700;
     color: white;
     text-align: center;
     text-transform: capitalize;
@@ -140,3 +140,116 @@ html {
     cursor: pointer;
     box-shadow: -.2rem -.2rem .2rem #000;
 }
+
+/* SECTION-3 */
+.section-3 {
+    width: 100%;
+    height: 100vh;
+    background-color: #333;
+    padding: 5rem 0;
+}
+
+.gallery {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 10rem;
+}
+
+.gallery-link {
+    position: relative;
+    margin: 1.5rem 1rem;
+}
+
+.gallery-link:hover::before {
+    width: 0.2rem;
+}
+
+.gallery-link:hover::after {
+    height: 0.2rem;
+}
+
+.gallery-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 80%;
+    background-color: white;
+    opacity: .7;
+    top: 2vh;
+    left: 85%;
+    transition: width .75s;
+}
+
+.gallery-link::after {
+    content: '';
+    position: absolute;
+    width: 85%;
+    height: 0;
+    background-color: white;
+    opacity: .7;
+    top: 6rem;
+    left: 10%;
+    transition: height .25s
+}
+
+.food-img {
+    width: 24vw;
+    height: 15vw;
+    object-fit: cover;
+    box-shadow: .3rem .3rem .1rem  #000, .5rem .5rem .1rem  #222, .7rem .7rem .1rem  #444, .9rem .9rem .1rem  #666, .11rem .11rem .1rem  #888;
+    transition: all .5s;
+}
+
+.gallery-link:hover .food-img {
+    box-shadow: .6rem .6rem .1rem  #000, .8rem .8rem .1rem  #222, 1rem 1rem .1rem  #444, 1.2rem 1.2rem .1rem  #666, 1.4rem 1.4rem .1rem  #888;
+    filter: blur(.3rem);
+    opacity: .5;
+}
+
+.food-name {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: #fff;
+    width: 0;
+    overflow: hidden;
+    transition: width .3s
+}
+
+.gallery-link:hover .food-name {
+    width: 100%;
+    transition: width 1.5s .5s
+}
+
+.food-description {
+    position: absolute;
+    bottom: 3vh;
+    left: 2rem;
+    width: 75%;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .8s;
+}
+
+.gallery-link:hover .food-description {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s 1.25s;
+
+}
+
+
+
+
+
